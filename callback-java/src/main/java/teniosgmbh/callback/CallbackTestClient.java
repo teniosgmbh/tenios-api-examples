@@ -1,7 +1,6 @@
 package teniosgmbh.callback;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
 
 import javax.ws.rs.client.Client;
@@ -9,7 +8,6 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
@@ -28,9 +26,7 @@ public class CallbackTestClient {
 
     private static final String DELAY = "0"; // Delay in seconds
 
-    private static ObjectMapper mapper = new ObjectMapper();
-
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args) throws InterruptedException {
         CallbackTestClient callbackTestClient = new CallbackTestClient();
         Integer callbackId = callbackTestClient.initCallbackRequest();
         String status = callbackTestClient.statusCallbackRequest(callbackId);
@@ -41,7 +37,7 @@ public class CallbackTestClient {
     }
 
     // A method to initialize callback
-    private Integer initCallbackRequest() throws IOException {
+    private Integer initCallbackRequest() {
         Client client = ClientBuilder.newClient().register(JacksonJsonProvider.class);
         // Init callback request parameters
         HashMap<String, String> parameters = new HashMap<>();
@@ -64,15 +60,14 @@ public class CallbackTestClient {
     }
 
     // Extract id of registered callback from response
-    private Integer extractCallbackId(Response response) throws IOException {
-        String jsonString = response.readEntity(String.class);
-        JsonNode result = mapper.readTree(jsonString);
+    private Integer extractCallbackId(Response response) {
+        JsonNode result = response.readEntity(JsonNode.class);
 
         return result.get("id").asInt();
     }
 
     // A method to request registered callback status
-    private String statusCallbackRequest(Integer callbackId) throws IOException {
+    private String statusCallbackRequest(Integer callbackId) {
         Client client = ClientBuilder.newClient().register(JacksonJsonProvider.class);
         // Status callback request parameters
         HashMap<String, String> parameters = new HashMap<>();
@@ -93,9 +88,8 @@ public class CallbackTestClient {
     }
 
     // Extract callback status from response
-    private String extractStatus(Response response) throws IOException {
-        String jsonString = response.readEntity(String.class);
-        JsonNode result = mapper.readTree(jsonString);
+    private String extractStatus(Response response) {
+        JsonNode result = response.readEntity(JsonNode.class);
 
         return result.get("status").asText();
     }

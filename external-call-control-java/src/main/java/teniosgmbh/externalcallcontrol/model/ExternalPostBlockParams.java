@@ -1,6 +1,7 @@
 package teniosgmbh.externalcallcontrol.model;
 
 import java.util.Map;
+import java.util.UUID;
 
 public class ExternalPostBlockParams {
     
@@ -13,6 +14,7 @@ public class ExternalPostBlockParams {
         REQUESTING_BLOCKS, VALIDATION_ERRORS;
     }
 
+    private UUID callControlUuid;
     private int loopCount;
     private RequestStatus requestStatus;
     private BlocksProcessingResult blocksProcessingResult;
@@ -47,6 +49,12 @@ public class ExternalPostBlockParams {
     }
 
 
+    public UUID getCallControlUuid() {
+        return callControlUuid;
+    }
+    public void setCallControlUuid(final UUID callControlUuid) {
+        this.callControlUuid = callControlUuid;
+    }
 
     public int getLoopCount() {
         return loopCount;
@@ -76,6 +84,7 @@ public class ExternalPostBlockParams {
         sb.append(", customerNumber=").append(customerNumber);
         sb.append(", accessKey='").append(accessKey).append('\'');
         sb.append(", variables=").append(variables);
+        sb.append(", callControlUuid=").append(callControlUuid);
         sb.append(", loopCount=").append(loopCount);
         sb.append(", requestStatus=").append(requestStatus);
         sb.append(", blocksProcessingResult=").append(blocksProcessingResult);

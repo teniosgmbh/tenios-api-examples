@@ -65,7 +65,8 @@ public class MyExternalPost {
                         case 0:
 
                             return new CallControlResponse(
-                                    Block.newAnnouncementBlock("Voicemail_Ansage", true)
+//                                    Block.newAnnouncementBlock("Voicemail_Ansage", true),
+                                    Block.newSayBlock("en-au.female.1", false, "Hello there")
                             );
 
 
@@ -75,7 +76,8 @@ public class MyExternalPost {
                                     Block.newBridgeBlock("SEQUENTIAL",
                                             new Destination("SIP_USER", "1003", null),
                                             new Destination("SIP_USER", "1004", null)),
-                                    Block.newAnnouncementBlock("My_Announcement", false)
+                                    Block.newAnnouncementBlock("My_Announcement", false),
+                                    Block.newSayBlock("de.male.1", false, "Vielen Dank und auf Wiedersehen!")
                             );
 
                         default:
