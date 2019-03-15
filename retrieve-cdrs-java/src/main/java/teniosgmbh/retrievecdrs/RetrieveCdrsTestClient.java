@@ -1,7 +1,6 @@
 package teniosgmbh.retrievecdrs;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
 
 import javax.ws.rs.client.Client;
@@ -19,10 +18,10 @@ public class RetrieveCdrsTestClient {
     private static final String CDRS_RETRIEVE = "cdrs/retrieve";
 
     private static final String ACCESS_KEY = "xxx3f096-xxxx-xxxx-xxxx-8353b27e2xxx"; // API access key of account. Can be found in 'General Settings page'
-    private static final Integer PAGE = 1;
-    private static final Integer PAGE_SIZE = 10;
 
-    private static ObjectMapper mapper = new ObjectMapper();
+    private static final Integer PAGE = 1;
+
+    private static final Integer PAGE_SIZE = 10;
 
     public static void main(String[] args) throws IOException {
         RetrieveCdrsTestClient apiClient = new RetrieveCdrsTestClient();
@@ -54,14 +53,9 @@ public class RetrieveCdrsTestClient {
 
     // Read JSON string from response and process results
     private static void processResponse(Response response) throws IOException {
-        String jsonString = response.readEntity(String.class);
-        JsonNode result = extractResultFromResponse(jsonString);
+        JsonNode result = response.readEntity(JsonNode.class);
 
         processResult(result);
-    }
-
-    private static JsonNode extractResultFromResponse(String jsonString) throws IOException {
-        return mapper.readTree(jsonString);
     }
 
     // Extract pagination info and process cdr items
@@ -83,10 +77,10 @@ public class RetrieveCdrsTestClient {
         System.out.println("\nThe response contains the following cdrs:");
         for (final JsonNode cdr : result) {
             System.out.println(String.format("----------------------------------\n" +
-                    "UUID : %s\n" +
-                    "Call Type : %s\n" +
-                    "Duration : %s\n" +
-                    "Cost : %6.3f\n",
+                            "UUID : %s\n" +
+                            "Call Type : %s\n" +
+                            "Duration : %s\n" +
+                            "Cost : %6.3f\n",
                     cdr.get("uuid").asText(),
                     cdr.get("call_type").asText(),
                     cdr.get("duration").asText(),
