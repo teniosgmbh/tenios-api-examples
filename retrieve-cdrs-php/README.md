@@ -1,6 +1,6 @@
 # Retrieve CDR in PHP
 
-Test script, represent ability to retrieve historical info aboud call for specific range of time
+Test script, represent ability to retrieve historical info about call for specific range of time
 
 Requirements:
 - PHP 5.4 (or higher version)

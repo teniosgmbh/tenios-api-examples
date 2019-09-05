@@ -1,7 +1,6 @@
 <?php
 
-//should be changed to production api url
-$server_url = "https://api.tevox.com/";
+$server_url = "https://api.tenios.com/";
 
 $init_callback_endpoint = "callback/init";
 $status_callback_endpoint = "callback/status";
@@ -22,7 +21,7 @@ $init_callback_request = array(
     
 );
 
-echo 'Making request to Tevox api to create callback. Request details:'."\r\n";
+echo 'Making request to TENIOS api to create callback. Request details:'."\r\n";
 echo 'Access key : '.$init_callback_request['access_key']."\r\n";
 echo 'Phone number to use in callback : '.$init_callback_request['callback_number']."\r\n";
 echo "\r\n";

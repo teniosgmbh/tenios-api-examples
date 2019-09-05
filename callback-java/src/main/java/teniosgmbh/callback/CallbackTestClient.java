@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
 public class CallbackTestClient {
-    private static final String BASE_URL = "https://api.tevox.com"; // API base url
+    private static final String BASE_URL = "https://api.tenios.com"; // API base url
 
     private static final String CALLBACK_INIT = "callback/init";
 

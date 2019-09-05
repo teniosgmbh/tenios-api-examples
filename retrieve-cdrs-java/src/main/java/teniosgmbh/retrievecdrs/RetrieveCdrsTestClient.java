@@ -13,7 +13,7 @@ import java.util.HashMap;
 
 public class RetrieveCdrsTestClient {
 
-    private static final String BASE_URL = "https://api.tevox.com"; // API base url
+    private static final String BASE_URL = "https://api.tenios.com"; // API base url
 
     private static final String CDRS_RETRIEVE = "cdrs/retrieve";
 
@@ -40,7 +40,7 @@ public class RetrieveCdrsTestClient {
         parameters.put("page", PAGE.toString()); // Page to retrieve, e.g. 1
         parameters.put("page_size", PAGE_SIZE.toString()); // Number of cdrs per page, e.g. 10
 
-        String startRequest = String.format("Making request to Tevox api to retrieve cdrs. Request details: \n" +
+        String startRequest = String.format("Making request to TENIOS api to retrieve cdrs. Request details: \n" +
                 "Access key: %s\n" +
                 "Page (integer value starting from 1): %d\n" +
                 "Page size (integer value starting from 1): %d", ACCESS_KEY, PAGE, PAGE_SIZE);

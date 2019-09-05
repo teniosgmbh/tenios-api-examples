@@ -8,7 +8,7 @@ Requirements:
 2. Edit MakeCallTestClient.java file and replace `ACCESS_KEY` key and `TENIOS_NUMBER`, `DESTINATION_NUMBER`
 with real API key and numbers. Save the file.
 3. Go back to `make-call-java` directory and run `mvn clean package`;
-4. Go to `make-call-java/target directory`
+4. Go to `make-call-java/target` directory
 5. Run `java -jar make-call-java-v17-jar-with-dependencies.jar`
 
 

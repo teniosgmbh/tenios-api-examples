@@ -1,7 +1,6 @@
 <?php
 
-//should be changed to production api url
-$server_url = "https://api.tevox.com/";
+$server_url = "https://api.tenios.com/";
 $endpoint = "cdrs/retrieve";
 //Replace with access_key of account. Can be found in 'General Settings page'
 $access_key="XXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX";
@@ -15,7 +14,7 @@ $data = array(
     'start_date_to' => '2017-11-01T00:00:00.000Z' // Retrieve cdrs of calls that were started before given timestamp
 );
 
-echo 'Making request to Tevox api to retrieve cdr. Request details:'."\r\n";
+echo 'Making request to TENIOS api to retrieve cdr. Request details:'."\r\n";
 echo 'Access key : '.$data['access_key']."\r\n";
 echo 'Page(integer value starting from 1) : '.$data['page']."\r\n";
 echo 'Page to retrieve:(integer value starting from 1) : '.$data['page']."\r\n";
