@@ -4,6 +4,8 @@ Test script, represent ability to create calls in TENIOS system
 
 Requirements:
 - PHP 5.4 (or higher version)
+- If you are using apache, make sure that mod-php is installed. On Debian derivatives 
+  you can install it by ``apt install libapache2-mod-php``. 
 
 ## Test:
 1. First of all you need to have active account in TENIOS system. You need to copy your personal Access Key, it can be found in General Setting page in TENIOS portal.

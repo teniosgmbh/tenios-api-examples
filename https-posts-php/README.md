@@ -1,10 +1,12 @@
-# HTTP(s) POSTs at beginning/end of call and on each block in PHP
+# HTTPS POSTs at beginning/end of call and on each block in PHP
 
 Requirements:
 --
-* PHP version > 5.4
-* Domain name
-* HTTPS certificate for domain name
+-PHP version > 5.4
+- If you are using apache, make sure that mod-php is installed. On Debian derivatives 
+  you can install it by ``apt install libapache2-mod-php``.
+- Domain name
+- HTTPS certificate for domain name
 
 External Call Control will work only with proper configured HTTPS endpoint, so in order to use this feature additional setup is required.
 
