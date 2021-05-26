@@ -65,7 +65,7 @@ public class MyExternalPost {
                         case 0:
 
                             return new CallControlResponse(
-//                                    Block.newAnnouncementBlock("Voicemail_Ansage", true),
+                                    Block.newAnnouncementBlock("Voicemail_Ansage", true),
                                     Block.newSayBlock("en-au.female.1", false, "Hello there")
                             );
 
