@@ -49,8 +49,8 @@ Deploying Rasa Open Source Bot over Cloud using Docker with API enabled and usin
 
 #### 3) Clone the Docker App
 
-- > git clone https://github.com/athenasaurav/pizza-bot.git
-- > cd pizza-bot
+- > git clone https://github.com/teniosgmbh/tenios-api-examples.git
+- > cd RASA-PizzaBot
 
 #### 4) Installing NGINX
 
