@@ -1,0 +1,43 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - hey there
+    - let's go
+    - hey dude
+    - good morning
+    - good evening
+    - good afternoon
+    - hi i would like to order a pizza
+    - can you help me with an order
+    - i want to order a pizza
+    - do you pizzas available
+    - hello Tenios
+    
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: tenios_start
+  examples: |
+    - tenios_start
+    - tenios start
+    - starting tenios
+    - tenios started

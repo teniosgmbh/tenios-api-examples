@@ -1,0 +1,58 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - tenios_start
+  
+responses:
+
+  utter_start:
+  - text: "Welcome to Tenios Pizza delivery"
+
+  utter_goodbye:
+  - text: "Have a nice day"
+    custom:
+      end_of_conversation: true
+
+  utter_gimik:
+  - text: "THANK YOU FOR YOUR ORDER . YOUR order for {WHAT_PIZZA_WOULD_YOU_LIKE_TO_ORDER} in name of {WHAT_IS_YOUR_NAME} to {WHAT_IS_YOUR_ADDRESS} will be delivered in 30 min"
+
+  utter_ask_WHAT_PIZZA_WOULD_YOU_LIKE_TO_ORDER:
+  - text: what would you like to order?
+
+  utter_ask_WHAT_IS_YOUR_NAME:
+  - text: what is your name?
+
+  utter_ask_WHAT_IS_YOUR_ADDRESS:
+  - text: what is your address?
+
+  utter_please_rephrase:
+  - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+
+slots:
+
+  WHAT_PIZZA_WOULD_YOU_LIKE_TO_ORDER:
+    type: text
+    influence_conversation: true
+  WHAT_IS_YOUR_NAME:
+    type: text
+    influence_conversation: true
+  WHAT_IS_YOUR_ADDRESS:
+    type: text
+    influence_conversation: true
+
+
+forms:
+  pizza_form: 
+    WHAT_PIZZA_WOULD_YOU_LIKE_TO_ORDER:
+    - type: from_text
+    WHAT_IS_YOUR_NAME:
+    - type: from_text
+    WHAT_IS_YOUR_ADDRESS:
+    - type: from_text
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
