@@ -1,3 +1,9 @@
+# Tenios Portal Setup for Rasa Bot
+To configure the Rasa Bot in TENIOS Portal follow the instructions provided in the Link
+https://www.tenios.de/doc/voicebots
+https://www.tenios.de/doc/voicebot-rasa-setup
+https://www.tenios.de/doc/voicebot-api
+
 # Connect to VM instance using Putty and PUTTYGEN
 To connect to GCP VM instance we need following two software installed in ou PC. 
 
